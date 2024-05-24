@@ -1,0 +1,15 @@
+﻿<Application x:Class="HomeCollection.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HomeCollection" Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Padding" Value="15 5"/>
+                <Setter Property="Margin" Value="5 0"/>
+                <Setter Property="MinWidth" Value="100"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

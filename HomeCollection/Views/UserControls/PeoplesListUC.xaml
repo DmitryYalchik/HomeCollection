@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="HomeCollection.Views.UserControls.PeoplesListUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HomeCollection.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Назад" Command="{Binding BackCommand}"/>
+            <Button Content="Добавить" Foreground="Green" Command="{Binding AddCommand}"/>
+            <Button Content="Изменить" Command="{Binding EditCommand}" CommandParameter="{Binding CurrentPeople}"/>
+            <Button Content="Удалить" Foreground="DarkRed" Command="{Binding RemoveCommand}" CommandParameter="{Binding CurrentPeople}"/>
+        </StackPanel>
+
+        <ListView ItemsSource="{Binding Peoples}" Grid.Row="1" SelectedItem="{Binding CurrentPeople, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionMode="Single" BorderThickness="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Идентификатор" Width="auto" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="ФИО" Width="auto" DisplayMemberBinding="{Binding FullName}" />
+                    <GridViewColumn Header="Номер телефона" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}" />
+                    <GridViewColumn Header="Дата рождения" Width="auto" DisplayMemberBinding="{Binding DateBirth}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

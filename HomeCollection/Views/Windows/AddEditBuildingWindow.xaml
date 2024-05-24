@@ -1,0 +1,34 @@
+﻿<Window x:Class="HomeCollection.Views.Windows.AddEditBuildingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeCollection.Views.Windows"
+        mc:Ignorable="d"
+        Title="Добавление/изменение записи" ResizeMode="NoResize" Height="250" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="auto" SharedSizeGroup="Labels"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Column="1" Margin="0 35 15 0" Grid.Row="0" Text="Идентификатор" />
+        <TextBlock Grid.Column="1" Margin="0 15 15 0" Grid.Row="1" Text="Короткое наименование" />
+        <TextBlock Grid.Column="1" Margin="0 15 15 0" Grid.Row="2" Text="Длинное наименование" />
+
+        <TextBox Grid.Column="2" Margin="0 35 0 0" Grid.Row="0" Text="{Binding CurrentBuilding.Id, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+        <TextBox Grid.Column="2" Margin="0 15 0 0" Grid.Row="1" Text="{Binding CurrentBuilding.ShortName, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Column="2" Margin="0 15 0 0" Grid.Row="2" Text="{Binding CurrentBuilding.Address, UpdateSourceTrigger=PropertyChanged}" MaxLines="3" MinLines="2" TextWrapping="WrapWithOverflow"/>
+
+        <Button Content="Отменить" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0 25 0 0" Foreground="DarkRed" Command="{Binding CloseCommand}"/>
+        <Button Content="Сохранить" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Margin="0 25 0 0" Foreground="Green" Command="{Binding SaveAndCloseCommand}"/>
+    </Grid>
+</Window>

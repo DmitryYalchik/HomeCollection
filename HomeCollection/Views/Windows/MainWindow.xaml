@@ -1,0 +1,27 @@
+﻿<Window x:Class="HomeCollection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeCollection" xmlns:viewmodels="clr-namespace:HomeCollection.ViewModels" xmlns:usercontrols="clr-namespace:HomeCollection.Views.UserControls"
+        mc:Ignorable="d"
+        Title="Домашние" Height="450" Width="800">
+
+    <Grid Margin="0">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:BuildingsListViewModel}">
+                <usercontrols:BuildingsListUC/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:EnterancesListViewModel}">
+                <usercontrols:EnterancesListUC/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:FlatsListViewModel}">
+                <usercontrols:FlatsListUC/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PeoplesListViewModel}">
+                <usercontrols:PeoplesListUC/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>
