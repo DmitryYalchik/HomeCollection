@@ -36,6 +36,7 @@ namespace HomeCollection.ViewModels
         private void OnAddCommandExecuted(object obj)
         {
             CurrentPeople = new People();
+            CurrentPeople.DateBirth = DateTime.Now;
             addEditPeopleWindow = ServiceLocator.GetService<AddEditPeopleWindow>();
             addEditPeopleWindow.DataContext = this;
             addEditPeopleWindow.ShowDialog();
@@ -169,7 +170,7 @@ namespace HomeCollection.ViewModels
         /// </summary>
         private void OnAppDbContext_SavedChanges(object? sender, SavedChangesEventArgs e)
         {
-            OnPropertyChanged(nameof(Enterances));
+            OnPropertyChanged(nameof(Peoples));
         }
     }
 }

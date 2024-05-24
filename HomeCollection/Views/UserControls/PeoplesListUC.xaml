@@ -24,7 +24,7 @@
                     <GridViewColumn Header="Идентификатор" Width="auto" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="ФИО" Width="auto" DisplayMemberBinding="{Binding FullName}" />
                     <GridViewColumn Header="Номер телефона" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}" />
-                    <GridViewColumn Header="Дата рождения" Width="auto" DisplayMemberBinding="{Binding DateBirth}" />
+                    <GridViewColumn Header="Дата рождения" Width="auto" DisplayMemberBinding="{Binding DateBirth, StringFormat='{}{0:dd.MM.yyyy}'}" />
                 </GridView>
             </ListView.View>
         </ListView>
