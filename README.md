@@ -293,7 +293,7 @@ public class MainWindowViewModel : ViewModel
 </table>
 
 ------------
-# <a name="nuget"></a> Useg NuGet packages
+# <a name="nuget"></a> Used NuGet packages
 
 <table><thead>
 <tr>
