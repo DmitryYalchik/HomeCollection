@@ -1,7 +1,7 @@
 # HomeCollection
 #### Application for keeping records of houses, entrances, apartments and people. 
 #### Developed in WPF (C#) using the MVVM pattern 🖥️
-#### In this Application you won't find ValidationResult or anythink like that. There is only navigation, CRUD actions for using like some template for future projects. Thank's! 💖
+#### In this Application you won't find validations of model or anythink like that. There is only navigation, CRUD actions for using like some template for future projects. Thank's! 💖
 #### If you find something that can be implemented better, please let me know. I will be glad to learn and use the best practices 🔍
 #### And if you like the implementation of this project, please Star this repo 🌟
 
