@@ -30,13 +30,5 @@ namespace HomeCollection.Stores
             set { _currentFlat = value; }
         }
         #endregion
-
-#warning УДАЛИТЬ ЧИ ШО
-        private People _currentPeople;
-        public People CurrentPeople
-        {
-            get { return _currentPeople; }
-            set { _currentPeople = value; }
-        }
     }
 }
